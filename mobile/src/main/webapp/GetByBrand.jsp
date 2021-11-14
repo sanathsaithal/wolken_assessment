@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="<c:url value="/js/script.js"/>"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -33,19 +35,21 @@
 
 
 					<div class="form-group row">
-						<div class="col-4">
-							<label>Enter Brand Name: </label>
-						</div>
-						<div class="col">
-							<input type="text" name="brandName"
-								class="form-control-sm form-control"
-								placeholder="Enter Brand name">
-						</div>
+					<div class="col-4">
+						<label>Enter brand name: </label>
 					</div>
+					<div class="col">
+						<input type="text" name="brandName"
+							class="form-control-sm form-control"
+							placeholder="Enter brand name"
+							onblur="validateName()">
+					</div>
+					<div class="col"><label class="lblErr" id="errName"></label></div>
+				</div>
 
 					<div class="form-group row">
 						<div class="col-5">
-							<button type="submit" class="btn btn-outline-primary size">SEARCH</button>
+							<button type="submit" class="btn btn-outline-primary size" onclick="validateField()">SEARCH</button>
 						</div>
 					</div>
 				</div>
